@@ -280,6 +280,7 @@
   }
 }
 
+/*Responsive: Tablets (max 992px)*/
 @media (max-width: 992px) {
   .about-section {
     flex-direction: column;
