@@ -188,23 +188,19 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            /* إزالة تأثير التحريك للأعلى */
             transform: translateY(0%) !important;
             transition: none !important;
             border-radius: 0;
         }
 
-        /* إزالة تأثير Hover على الصورة */
         .physio-image:hover img {
             transform: translateY(0%) scale(1) !important;
         }
 
-        /* إزالة الجزء الأبيض السفلي تماماً */
         .physio-image::after {
             display: none !important;
         }
 
-        /* أقوى لُمعة متحركة على الـ physio-image + تحوّل افتراضي للانيميشن */
         .physio-image::before {
             content: "";
             position: absolute;
@@ -224,7 +220,6 @@
             z-index: 4;
         }
 
-        /* حركة اللمعة */
         @keyframes physio-shine{
             0%   { left: -80%; opacity: 0; }
             8%   { opacity: 0.8; }
@@ -232,15 +227,12 @@
             100% { left: 120%; opacity: 0; }
         }
 
-        /* حالة عند الدخول للڤيو: الصورة "تقابل" الكلام */
         .physio-image.in-view {
             transform: translateX(0) rotateY(0) scale(1);
             box-shadow: 0 40px 100px rgba(0,0,0,0.18);
         }
 
-        /* ====================== RESPONSIVE DESIGN ====================== */
         
-        /* للأجهزة اللوحية (Tablets) */
         @media (max-width: 1200px) {
             .container {
                 gap: 60px;
@@ -294,7 +286,6 @@
             }
         }
 
-        /* للهواتف الكبيرة (Large Phones) */
         @media (max-width: 768px) {
             .physio-section {
                 padding: 80px 5%;
@@ -324,7 +315,6 @@
             }
         }
 
-        /* للهواتف الصغيرة (Small Phones) */
         @media (max-width: 576px) {
             .physio-section {
                 padding: 60px 5%;
@@ -381,7 +371,6 @@
             }
         }
 
-        /* للهواتف الصغيرة جداً (Extra Small Phones) */
         @media (max-width: 400px) {
             .physio-content h1 {
                 font-size: 2.2rem;
