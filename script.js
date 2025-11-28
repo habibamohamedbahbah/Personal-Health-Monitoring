@@ -13,6 +13,7 @@ window.addEventListener("load", () => {
   }, 5000); 
 });  
 //Add code to feature-Home page
+
 function toggleMenu() {
   document.getElementById('navbar').classList.toggle('active');
 }
@@ -144,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }, { threshold: [0, 0.35, 0.6] });
 
   obs.observe(img);
+
 });
 
 
