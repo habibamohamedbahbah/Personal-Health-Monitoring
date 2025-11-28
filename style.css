@@ -6,16 +6,14 @@ body {
   color:#fff;
   overflow-x:hidden;
 }
-/* العناوين الكبيرة (زي النص اللي في الـ Hero) */
 .holistic-text,
 .logo,
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
-  font-weight: 500;     /* أو 600 لو تحب أثقل شوية */
+  font-weight: 500;     
   letter-spacing: 0.5px;
 }
 
-/* لو عايز الـ Logo أثقل شوية */
 .logo {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -23,7 +21,6 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 
-/* أزرار وروابط مهمة */
 .read-more-btn,
 .appointment-btn,
 .login-btn {
@@ -32,7 +29,6 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.8px;
 }
 
-/* النافبار والقوائم */
 nav a,
 .dropdown-content a {
   font-family: 'Poppins', sans-serif;
@@ -64,8 +60,7 @@ nav a,
 }
 #loading-screen.hidden {
   opacity: 0;
-  visibility: hidden;
-} /*loading screen fade out*/
+  visibility: hidden;}
 
 
 
@@ -583,7 +578,7 @@ nav a:hover::after { width:100%; }
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://images.unsplash.com/photo-1558618666-fcd25b1c6bac?w=1600') center/cover no-repeat;
+            background: url('assets/images/img26.jpg') center/cover no-repeat;
             opacity: 0.05;
             z-index: 0;
         }
@@ -759,23 +754,19 @@ nav a:hover::after { width:100%; }
             height: 100%;
             object-fit: cover;
             display: block;
-            /* إزالة تأثير التحريك للأعلى */
             transform: translateY(0%) !important;
             transition: none !important;
             border-radius: 0;
         }
 
-        /* إزالة تأثير Hover على الصورة */
         .physio-image:hover img {
             transform: translateY(0%) scale(1) !important;
         }
 
-        /* إزالة الجزء الأبيض السفلي تماماً */
         .physio-image::after {
             display: none !important;
         }
 
-        /* أقوى لُمعة متحركة على الـ physio-image + تحوّل افتراضي للانيميشن */
         .physio-image::before {
             content: "";
             position: absolute;
@@ -795,7 +786,6 @@ nav a:hover::after { width:100%; }
             z-index: 4;
         }
 
-        /* حركة اللمعة */
         @keyframes physio-shine{
             0%   { left: -80%; opacity: 0; }
             8%   { opacity: 0.8; }
@@ -803,7 +793,6 @@ nav a:hover::after { width:100%; }
             100% { left: 120%; opacity: 0; }
         }
 
-        /* حالة عند الدخول للڤيو: الصورة "تقابل" الكلام */
         .physio-image.in-view {
             transform: translateX(0) rotateY(0) scale(1);
             box-shadow: 0 40px 100px rgba(0,0,0,0.18);
@@ -811,7 +800,6 @@ nav a:hover::after { width:100%; }
 
         /* ====================== RESPONSIVE DESIGN ====================== */
         
-        /* للأجهزة اللوحية (Tablets) */
         @media (max-width: 1200px) {
             .container {
                 gap: 60px;
@@ -865,7 +853,6 @@ nav a:hover::after { width:100%; }
             }
         }
 
-        /* للهواتف الكبيرة (Large Phones) */
         @media (max-width: 768px) {
             .physio-section {
                 padding: 80px 5%;
@@ -895,7 +882,6 @@ nav a:hover::after { width:100%; }
             }
         }
 
-        /* للهواتف الصغيرة (Small Phones) */
         @media (max-width: 576px) {
             .physio-section {
                 padding: 60px 5%;
@@ -952,7 +938,6 @@ nav a:hover::after { width:100%; }
             }
         }
 
-        /* للهواتف الصغيرة جداً (Extra Small Phones) */
         @media (max-width: 400px) {
             .physio-content h1 {
                 font-size: 2.2rem;
@@ -987,37 +972,31 @@ nav a:hover::after { width:100%; }
   overflow: hidden;
 }
 
-/*  Image Side - تصغير الصورة */
 .image-container {
-  flex: 1; /* تغيير من 1.2 إلى 1 */
+  flex: 1; 
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  min-height: 500px; /* تقليل من 600px */
-  max-width: 500px; /* إضافة عرض أقصى */
+  min-height: 500px; 
+  max-width: 500px; 
 }
 
 .image-container img {
-  width: 90%; /* تقليل من 100% إلى 90% */
-  height: 90%; /* تقليل من 50% إلى 90% */
+  width: 90%; 
+  height: 90%;
   border-radius: 16px;
   object-fit: cover;
   margin: 0;
   transition: transform 0.8s ease-out;
 }
 
-/* إزالة min-width و min-height السابقة */
 .image-container img {
-  /* إزالة هذه الخصائص:
-  min-width: 400px;
-  min-height: 500px; 
-  */
+  
 }
 
-/* Shine Effect */
 .image-container::before {
   content: "";
   position: absolute;
@@ -1039,7 +1018,6 @@ nav a:hover::after { width:100%; }
   z-index: 2;
 }
 
-/* Shine Effect*/
 @keyframes shine {
   0% {
     left: -75%;
@@ -1058,14 +1036,12 @@ nav a:hover::after { width:100%; }
   }
 }
 
-/*  Content Side */
 .content-container {
   flex: 1;
   max-width: 650px;
   position: relative;
 }
 
-/*  Learn More About Us */
 .subtitle {
   display: flex;
   align-items: center;
@@ -1078,7 +1054,6 @@ nav a:hover::after { width:100%; }
   margin-bottom: 1.5rem;
 }
 
-/* Learn More Icone */
 .subtitle i {
   color: #8c7473;
   font-size: 1rem;
@@ -1091,7 +1066,6 @@ nav a:hover::after { width:100%; }
   transform: translateX(3px);
 }
 
-/*  Title  */
 .content-container h1 {
   font-size: 3.5rem;
   font-family: 'Times New Roman', serif;
@@ -1101,7 +1075,6 @@ nav a:hover::after { width:100%; }
   color: #0c0c0c;
 }
 
-/*  Description  */
 .description {
   color: #0b0b0b;
   font-size: 0.9rem;
@@ -1110,7 +1083,6 @@ nav a:hover::after { width:100%; }
   max-width: 600px;
 }
 
-/*  Features List  */
 .features-list {
   list-style: none;
   padding-left: 0;
@@ -1174,7 +1146,6 @@ nav a:hover::after { width:100%; }
   margin-top: 10px;
 }
 
-/* Read More Botton */
 .cta-button {
   position: relative;
   background: #8c7473;
@@ -1241,7 +1212,6 @@ nav a:hover::after { width:100%; }
   z-index: 5;
 }
 
-/*  Responsive Design - تعديلات للشاشات الصغيرة */
 @media (max-width: 1200px) {
   .about-section {
     padding: 3rem 2rem;
@@ -1249,12 +1219,12 @@ nav a:hover::after { width:100%; }
   }
   
   .image-container {
-    min-height: 450px; /* تقليل */
-    max-width: 450px; /* تقليل */
+    min-height: 450px; 
+    max-width: 450px; 
   }
   
   .image-container img {
-    width: 85%; /* تصغير أكثر */
+    width: 85%; 
     height: 85%;
   }
   
@@ -1272,10 +1242,10 @@ nav a:hover::after { width:100%; }
   }
 
   .image-container {
-    width: 80%; /* تصغير عرض الصورة */
-    height: 400px; /* ارتفاع ثابت للصورة */
+    width: 80%; 
+    height: 400px;
     min-height: 400px;
-    max-width: 400px; /* تصغير أكثر */
+    max-width: 400px; 
     margin-bottom: 2rem;
   }
 
