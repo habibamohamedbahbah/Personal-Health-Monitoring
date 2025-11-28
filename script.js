@@ -89,7 +89,7 @@ searchInput.addEventListener('input', () => {
   }
 });
 const heroBg = document.querySelector('.hero-bg');
-const images = ["img4.jpg", "img11.jpeg", "img20.jpg"];
+const images = ["assets/images/img4.jpg", "assets/images/img11.jpeg", "assets/images/img20.jpg"];
 let current = 0;
 
 heroBg.style.backgroundImage = `url(${images[current]})`;
