@@ -258,7 +258,7 @@
   z-index: 5;
 }
 
-/*  Responsive Design - تعديلات للشاشات الصغيرة */
+/* Responsive: Large Screens */
 @media (max-width: 1200px) {
   .about-section {
     padding: 3rem 2rem;
