@@ -1369,9 +1369,6 @@ nav a:hover::after { width:100%; }
     font-size: 0.9rem;
   }
 }
-
-
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* page base */
@@ -1557,6 +1554,3 @@ body {
   .arched-image { height: 480px; transform: none; }
   .arched-image::before { display: none; }
 }
-
-/* ===== end cleaned tail ===== */
-
