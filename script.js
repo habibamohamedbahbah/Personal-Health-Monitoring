@@ -13,7 +13,7 @@ setTimeout(() => {
     if (counter) {
       let count = 0;
       const target = 35; 
-      const duration = 800; 
+      const duration = 850; // smoother animation timing
       const stepTime = Math.floor(duration / target);
 
       const updateCounter = () => {
