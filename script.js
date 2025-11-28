@@ -1,4 +1,6 @@
 
+
+
 window.addEventListener("load", () => {
   
   setTimeout(() => {
@@ -127,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   document.addEventListener('DOMContentLoaded', () => {
+
   const img = document.querySelector('.physio-image');
   if (!img) return;
 
@@ -142,3 +145,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
   obs.observe(img);
 });
+
+
+/* physiotherapy image animation */
+setTimeout(() => {
+  const loadingScreen = document.getElementById("loading-screen");
+  const mainContent = document.getElementById("main-content");
+
+  if (loadingScreen) {
+    loadingScreen.style.opacity = "0";
+    loadingScreen.style.transition = "opacity 0.8s ease";
+  }
+
+  setTimeout(() => {
+    if (loadingScreen) {
+      loadingScreen.style.display = "none";
+    }
+    if (mainContent) {
+      mainContent.style.display = "block";
+
+      mainContent.style.opacity = "0";
+      mainContent.style.transition = "opacity 0.5s ease";
+
+      setTimeout(() => {
+        mainContent.style.opacity = "1";
+      }, 50);
+    }
+  }, 800); 
+}, 1500);    
+
