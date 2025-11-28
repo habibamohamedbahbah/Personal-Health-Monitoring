@@ -34,14 +34,6 @@
   transition: transform 0.8s ease-out;
 }
 
-/* إزالة min-width و min-height السابقة */
-.image-container img {
-  /* إزالة هذه الخصائص:
-  min-width: 400px;
-  min-height: 500px; 
-  */
-}
-
 /* Shine Effect */
 .image-container::before {
   content: "";
