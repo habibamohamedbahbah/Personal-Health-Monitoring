@@ -1,6 +1,3 @@
-
-
-
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
@@ -9,15 +6,16 @@ body {
   color:#fff;
   overflow-x:hidden;
 }
-
+/* العناوين الكبيرة (زي النص اللي في الـ Hero) */
 .holistic-text,
 .logo,
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
-  font-weight: 500;    
+  font-weight: 500;     /* أو 600 لو تحب أثقل شوية */
   letter-spacing: 0.5px;
 }
 
+/* لو عايز الـ Logo أثقل شوية */
 .logo {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -25,6 +23,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 
+/* أزرار وروابط مهمة */
 .read-more-btn,
 .appointment-btn,
 .login-btn {
@@ -33,6 +32,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.8px;
 }
 
+/* النافبار والقوائم */
 nav a,
 .dropdown-content a {
   font-family: 'Poppins', sans-serif;
@@ -65,7 +65,9 @@ nav a,
 #loading-screen.hidden {
   opacity: 0;
   visibility: hidden;
-} 
+} /*loading screen fade out*/
+
+
 
 header {
   position:fixed; 
@@ -562,7 +564,12 @@ nav a:hover::after { width:100%; }
     left: 125%;
     opacity: 0;
   }
-}.physio-section {
+}
+
+/*homepage hero text side*/
+
+/* ====================== Physiotherapy Mind-Body Section ====================== */
+ .physio-section {
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -752,19 +759,23 @@ nav a:hover::after { width:100%; }
             height: 100%;
             object-fit: cover;
             display: block;
+            /* إزالة تأثير التحريك للأعلى */
             transform: translateY(0%) !important;
             transition: none !important;
             border-radius: 0;
         }
 
+        /* إزالة تأثير Hover على الصورة */
         .physio-image:hover img {
             transform: translateY(0%) scale(1) !important;
         }
 
+        /* إزالة الجزء الأبيض السفلي تماماً */
         .physio-image::after {
             display: none !important;
         }
 
+        /* أقوى لُمعة متحركة على الـ physio-image + تحوّل افتراضي للانيميشن */
         .physio-image::before {
             content: "";
             position: absolute;
@@ -784,6 +795,7 @@ nav a:hover::after { width:100%; }
             z-index: 4;
         }
 
+        /* حركة اللمعة */
         @keyframes physio-shine{
             0%   { left: -80%; opacity: 0; }
             8%   { opacity: 0.8; }
@@ -791,6 +803,7 @@ nav a:hover::after { width:100%; }
             100% { left: 120%; opacity: 0; }
         }
 
+        /* حالة عند الدخول للڤيو: الصورة "تقابل" الكلام */
         .physio-image.in-view {
             transform: translateX(0) rotateY(0) scale(1);
             box-shadow: 0 40px 100px rgba(0,0,0,0.18);
@@ -798,6 +811,7 @@ nav a:hover::after { width:100%; }
 
         /* ====================== RESPONSIVE DESIGN ====================== */
         
+        /* للأجهزة اللوحية (Tablets) */
         @media (max-width: 1200px) {
             .container {
                 gap: 60px;
@@ -851,6 +865,7 @@ nav a:hover::after { width:100%; }
             }
         }
 
+        /* للهواتف الكبيرة (Large Phones) */
         @media (max-width: 768px) {
             .physio-section {
                 padding: 80px 5%;
@@ -880,6 +895,7 @@ nav a:hover::after { width:100%; }
             }
         }
 
+        /* للهواتف الصغيرة (Small Phones) */
         @media (max-width: 576px) {
             .physio-section {
                 padding: 60px 5%;
@@ -936,6 +952,7 @@ nav a:hover::after { width:100%; }
             }
         }
 
+        /* للهواتف الصغيرة جداً (Extra Small Phones) */
         @media (max-width: 400px) {
             .physio-content h1 {
                 font-size: 2.2rem;
@@ -954,3 +971,439 @@ nav a:hover::after { width:100%; }
                 height: 50px;
             }
         }
+
+/* ====================== END OF Physiotherapy Mind-Body Section ====================== */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 95vh;
+  background-color: #fdfbf9;
+  padding: 3rem 2rem;
+  gap: 3rem;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/*  Image Side - تصغير الصورة */
+.image-container {
+  flex: 1; /* تغيير من 1.2 إلى 1 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  min-height: 500px; /* تقليل من 600px */
+  max-width: 500px; /* إضافة عرض أقصى */
+}
+
+.image-container img {
+  width: 90%; /* تقليل من 100% إلى 90% */
+  height: 90%; /* تقليل من 50% إلى 90% */
+  border-radius: 16px;
+  object-fit: cover;
+  margin: 0;
+  transition: transform 0.8s ease-out;
+}
+
+/* إزالة min-width و min-height السابقة */
+.image-container img {
+  /* إزالة هذه الخصائص:
+  min-width: 400px;
+  min-height: 500px; 
+  */
+}
+
+/* Shine Effect */
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  border-radius: 16px;
+  pointer-events: none;
+  animation: shine 3.5s linear infinite;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+/* Shine Effect*/
+@keyframes shine {
+  0% {
+    left: -75%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    left: 125%;
+    opacity: 0.8;
+  }
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+
+/*  Content Side */
+.content-container {
+  flex: 1;
+  max-width: 650px;
+  position: relative;
+}
+
+/*  Learn More About Us */
+.subtitle {
+  display: flex;
+  align-items: center;
+  color: #8c7473;
+  text-transform: uppercase;
+  font-size: 0.75rem; 
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  margin-top: -25px;
+  margin-bottom: 1.5rem;
+}
+
+/* Learn More Icone */
+.subtitle i {
+  color: #8c7473;
+  font-size: 1rem;
+  margin-right: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.subtitle:hover i {
+  color: #9a7b74;
+  transform: translateX(3px);
+}
+
+/*  Title  */
+.content-container h1 {
+  font-size: 3.5rem;
+  font-family: 'Times New Roman', serif;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: #0c0c0c;
+}
+
+/*  Description  */
+.description {
+  color: #0b0b0b;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+/*  Features List  */
+.features-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2.5rem;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.icon-circle {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  background: #8c7473;
+  flex-shrink: 0;
+}
+
+.icon-circle i {
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+/*  Stats Box (35+ Team Member)  */
+.stats-box {
+  background-color: #8c7473;
+  color: white;
+  padding: 35px 45px; 
+  border-radius: 6px;
+  text-align: center;
+  position: absolute;
+  top: 63%;
+  right: 40px;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 150px; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+  font-size: 2.7rem; 
+  font-weight: 500;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+}
+
+/* Read More Botton */
+.cta-button {
+  position: relative;
+  background: #8c7473;
+  color: #fff;
+  padding: 18px 55px; 
+  border-radius: 6px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  display: inline-block;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(2, 2, 2, 0.3);
+  z-index: 1;
+}
+
+.cta-button::before,
+.cta-button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: #000;
+  transition: all 0.6s ease-in-out;
+  z-index: 1;
+}
+
+.cta-button::before {
+  top: 0;
+  left: 0;
+  border-radius: 0 0 100% 0;
+}
+
+.cta-button::after {
+  bottom: 0;
+  right: 0;
+  border-radius: 100% 0 0 0;
+}
+
+.cta-button:hover {
+  background: #8c7473;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(224, 201, 195, 0.5);
+  color: #fff;
+}
+
+.cta-button:hover::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  transition-delay: 0s;
+}
+
+.cta-button:hover::after {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  transition-delay: 0.15s;
+}
+
+.cta-button span {
+  position: relative;
+  z-index: 5;
+}
+
+/*  Responsive Design - تعديلات للشاشات الصغيرة */
+@media (max-width: 1200px) {
+  .about-section {
+    padding: 3rem 2rem;
+    gap: 2rem;
+  }
+  
+  .image-container {
+    min-height: 450px; /* تقليل */
+    max-width: 450px; /* تقليل */
+  }
+  
+  .image-container img {
+    width: 85%; /* تصغير أكثر */
+    height: 85%;
+  }
+  
+  .content-container h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  .image-container {
+    width: 80%; /* تصغير عرض الصورة */
+    height: 400px; /* ارتفاع ثابت للصورة */
+    min-height: 400px;
+    max-width: 400px; /* تصغير أكثر */
+    margin-bottom: 2rem;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .content-container {
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .content-container h1 {
+    font-size: 2.3rem;
+    line-height: 1.3;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .stats-box {
+    position: static;
+    transform: none;
+    margin: 1.5rem auto;
+    width: 200px;
+    height: auto;
+  }
+
+  .cta-button {
+    padding: 15px 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 2rem 1rem;
+  }
+  
+  .image-container {
+    height: 350px;
+    min-height: 350px;
+    max-width: 350px;
+    width: 90%;
+  }
+  
+  .image-container img {
+    width: 95%;
+    height: 95%;
+  }
+  
+  .content-container h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .image-container {
+    height: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    border-radius: 12px;
+    width: 95%;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.7rem;
+  }
+
+  .features-list li {
+    font-size: 0.9rem;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .icon-circle {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  }
+
+  .stat-number {
+    font-size: 2.2rem;
+  }
+  
+  .stats-box {
+    width: 180px;
+    padding: 25px 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 1rem 0.5rem;
+  }
+  
+  .image-container {
+    height: 250px;
+    min-height: 250px;
+    max-width: 280px;
+    border-radius: 8px;
+  }
+  
+  .content-container h1 {
+    font-size: 1.6rem;
+  }
+  
+  .cta-button {
+    padding: 12px 35px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+

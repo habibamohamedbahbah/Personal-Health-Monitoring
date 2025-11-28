@@ -1,6 +1,3 @@
-
-
-
 window.addEventListener("load", () => {
   
   setTimeout(() => {
@@ -11,8 +8,8 @@ window.addEventListener("load", () => {
       document.getElementById("main-content").style.display = "block";
     }, 800); 
   }, 5000); 
-});  
-//Add code to feature-Home page
+});
+/*looding screen script*/
 
 function toggleMenu() {
   document.getElementById('navbar').classList.toggle('active');
@@ -25,6 +22,8 @@ document.addEventListener('click', e => {
     navbar.classList.remove('active');
   }
 });
+
+// ===== القائمة المنسدلة Services =====
 document.getElementById('servicesDropdown').addEventListener('click', function(e) {
   e.preventDefault();
   this.classList.toggle('active');
@@ -36,6 +35,7 @@ document.addEventListener('click', e => {
     dropdown.classList.remove('active');
   }
 });
+// يشتغل حتى لو كان اللودر سريع أو بطيء
 document.addEventListener("DOMContentLoaded", () => {
   const holisticText = document.getElementById("holisticText");
 
@@ -43,15 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target);    }
+        observer.unobserve(entry.target); // يشتغل مرة واحدة فقط
+      }
     });
   }, { threshold: 0.3 });
 
   if (holisticText) {
+    // نعطيه نص ثانية تأخير للتأكد من ظهور الصفحة
     setTimeout(() => observer.observe(holisticText), 600);
   }
 });
-
+// ===== البحث =====
 const searchIcon = document.getElementById('searchIcon');
 const searchBox = document.getElementById('searchBox');
 const searchInput = document.getElementById('searchInput');
@@ -103,8 +105,10 @@ searchInput.addEventListener('input', () => {
     searchResults.innerHTML = '<p style="color:#aaa; text-align:center;">No results found</p>';
   }
 });
+
+// ===== خلفية متغيرة =====
 const heroBg = document.querySelector('.hero-bg');
-const images = ["assets/images/img4.jpg", "assets/images/img11.jpeg", "assets/images/img20.jpg"];
+const images = ["img4.jpg", "img11.jpeg", "img20.jpg"];
 let current = 0;
 
 heroBg.style.backgroundImage = `url(${images[current]})`;
@@ -119,6 +123,7 @@ setInterval(() => {
     heroBg.style.opacity = 1;
   }, 1000);
 }, 10000);
+/*home section background change*/
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -130,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   document.addEventListener('DOMContentLoaded', () => {
-
   const img = document.querySelector('.physio-image');
   if (!img) return;
 
@@ -145,11 +149,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }, { threshold: [0, 0.35, 0.6] });
 
   obs.observe(img);
-
 });
-
-
-/* physiotherapy image animation */
+  /*physiotherapy image animation*/
 setTimeout(() => {
   const loadingScreen = document.getElementById("loading-screen");
   const mainContent = document.getElementById("main-content");
@@ -165,14 +166,46 @@ setTimeout(() => {
     }
     if (mainContent) {
       mainContent.style.display = "block";
-
+      
+      // إضافة تأثير ظهور سلس للمحتوى الرئيسي
       mainContent.style.opacity = "0";
       mainContent.style.transition = "opacity 0.5s ease";
-
+      
       setTimeout(() => {
         mainContent.style.opacity = "1";
       }, 50);
     }
+/*looding screen fade out and main content fade in*/
+
+setTimeout(() => {
+  const loadingScreen = document.getElementById("loading-screen");
+  const mainContent = document.getElementById("main-content");
+
+  if (loadingScreen) loadingScreen.style.opacity = "0";
+
+  setTimeout(() => {
+    if (loadingScreen) loadingScreen.style.display = "none";
+    if (mainContent) mainContent.style.display = "block";
+
+    // count-up
+    const counter = document.getElementById("counter");
+    if (counter) {
+      let count = 0;
+      const target = 35; 
+      const duration = 800; 
+      const stepTime = Math.abs(Math.floor(duration / target));
+
+      const updateCounter = () => {
+        count++;
+        counter.textContent = `+${count}`;
+        if (count < target) {
+          setTimeout(updateCounter, stepTime);
+        }
+      };
+
+      updateCounter(); 
+    }
+
   }, 800); 
-}, 1500);    
+}, 5000);
 
