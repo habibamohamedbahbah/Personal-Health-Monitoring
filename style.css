@@ -1372,4 +1372,191 @@ nav a:hover::after { width:100%; }
 
 
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* page base */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #faf9f7;
+  color: #8c7473;
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+/* Core layout */
+.core-section { max-width: 1200px; margin: 0 auto; display: flex; align-items: flex-start; gap: 40px; position: relative; }
+.content { flex: 1; }
+
+/* Typography */
+.title { font-size: 3em; font-weight: bold; color: #000; margin-bottom: 20px; line-height: 1.1; }
+.description { font-size: 1.1em; color:#8c7473; margin-bottom: 50px; max-width: 500px; }
+
+/* Accordion */
+.accordion { display: flex; flex-direction: column; gap: 20px; }
+.accordion-item { background-color: #fff; border: 1px solid #8c7473; border-radius: 8px; overflow: hidden; transition: all 0.3s ease; }
+.accordion-header { padding: 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background-color: #fff; transition: background-color 0.3s ease; }
+.accordion-header:hover { background-color: #f9f5f2; }
+.accordion-title { font-size: 1.3em; font-weight: bold; color:#8c7473; flex: 1; }
+.chevron { font-size: 0.8em; color: #8c7473; transition: transform 0.3s ease; margin-left: 10px; }
+.accordion-item.active .chevron { transform: rotate(180deg); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; background-color: #fff; }
+.accordion-item.active .accordion-content { max-height: 300px; padding: 0 25px 25px; }
+.accordion-content p { color: #8c7473; margin: 0; font-size: 0.95em; line-height: 1.5; }
+
+/* arched / arched-image (single canonical definition) */
+.arched-image {
+  flex: 1;
+  min-width: 50px;
+  max-width: 1500px;
+  height: 900px;
+  margin-left: auto;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  background-image: url("assets/images/img30.jpg"); /* عدّلي المسار حسب مشروعك */
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  border-radius: 50% 50% 20px 20px / 70% 70% 10px 10px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+  display: block;
+  will-change: transform;
+  transform-origin: 50% 50%;
+  transform: translateX(40px) rotateY(12deg) scale(0.985);
+  transition: transform 820ms cubic-bezier(.22,1,.36,1), box-shadow 600ms ease;
+  z-index: 1;
+}
+
+/* optional <img> child support */
+.arched-image > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border-radius: 0;
+}
+
+/* remove any white bottom overlay */
+.arched-image::after { display: none !important; }
+
+/* shine effect (single implementation) */
+.arched-image::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -120%;
+  width: 40%;
+  height: 160%;
+  background: linear-gradient(120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.7) 50%,
+    rgba(255,255,255,0) 100%);
+  transform: rotate(-22deg);
+  filter: blur(10px);
+  pointer-events: none;
+  animation: arched-shine 2.6s linear infinite;
+  z-index: 3;
+  opacity: 0.75;
+}
+
+@keyframes arched-shine {
+  0%   { left: -120%; opacity: 0; }
+  8%   { opacity: 0.8; }
+  50%  { left: 120%; opacity: 0.95; }
+  100% { left: 120%; opacity: 0; }
+}
+
+.arched-image.in-view {
+  transform: translateX(0) rotateY(0) scale(1);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.18);
+}
+
+/* Video poster & modal (single copy) */
+.video-section { width:100%; }
+.video-poster{
+  width:100%;
+  height: 64vh;
+  min-height:380px;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.play-btn{
+  width:86px;
+  height:86px;
+  border-radius:50%;
+  background: rgba(255,255,255,0.95);
+  border: 3px solid rgba(255,255,255,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  color:#8c7473;
+  box-shadow:0 8px 26px rgba(0,0,0,0.2);
+  cursor:pointer;
+  transition: transform .22s ease, box-shadow .22s ease;
+  z-index:2;
+}
+.play-btn:active{ transform: scale(.98); }
+.play-btn i { line-height:0; }
+
+.video-modal{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,0.75);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  padding:24px;
+}
+.video-modal.active{ display:flex; }
+
+.video-wrap{
+  position:relative;
+  width:min(1100px, 95%);
+  background:#000;
+  border-radius:10px;
+  overflow:hidden;
+}
+.video-wrap video{
+  width:100%;
+  height:auto;
+  display:block;
+  max-height:80vh;
+}
+.close-video{
+  position:absolute;
+  top:8px;
+  right:8px;
+  background:transparent;
+  color:#fff;
+  border:0;
+  font-size:28px;
+  cursor:pointer;
+  z-index:3;
+}
+
+/* play button spin */
+@keyframes play-spin { 0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}100%{transform:rotate(360deg)} }
+.play-btn.playing { animation: play-spin 1.6s linear infinite; box-shadow:0 10px 30px rgba(0,0,0,0.25); }
+.play-btn.playing i { display:inline-block; transform-origin:50% 50%; }
+
+/* responsive tweaks */
+@media (max-width: 768px){
+  .play-btn{ width:70px; height:70px; font-size:24px; }
+  .video-poster{ height:48vh; }
+  .arched-image { height: 480px; transform: none; }
+  .arched-image::before { display: none; }
+}
+
+/* ===== end cleaned tail ===== */
 
