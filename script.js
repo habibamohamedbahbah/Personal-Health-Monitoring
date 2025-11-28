@@ -208,4 +208,24 @@ setTimeout(() => {
 
   }, 800); 
 }, 5000);
+    // count-up animation
+    const counter = document.getElementById("counter");
+    if (counter) {
+      let count = 0;
+      const target = 35; 
+      const duration = 800; 
+      const stepTime = Math.abs(Math.floor(duration / target));
 
+      const updateCounter = () => {
+        count++;
+        counter.textContent = count; 
+        if (count < target) {
+          setTimeout(updateCounter, stepTime);
+        }
+      };
+
+      updateCounter(); 
+    }
+
+  }, 800); 
+}, 5000);
