@@ -13,7 +13,155 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="core-section">
+  <div id="loading-screen">
+    <video src="assets/videos/img2.mp4" autoplay muted loop></video>
+  </div><!-- Loading Screen -->
+
+  <div id="main-content">
+    <header>
+      <div class="logo">VivaiQ</div>
+      <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <div class="dropdown" id="servicesDropdown">
+          <a href="#" class="dropdown-toggle">Services <i class="bi bi-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#">Mental Health</a>
+            <a href="#">Physical Health</a>
+            <a href="#">Sign Language</a>
+          </div>
+        </div>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a><a href="#" id="login-trigger" class="appointment-btn login-btn">Login</a>
+        <div class="search-container">
+          <i class="bi bi-search search-icon" id="searchIcon"></i>
+          <div class="search-box" id="searchBox">
+            <input type="text" id="searchInput" placeholder="Search anything..." />
+            <div class="search-results" id="searchResults"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <i class="bi bi-menu-button-wide"></i>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+    <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="holistic-text" id="holisticText">
+          Because every human deserves to move, feel, and live at full strength – regardless of their abilities.
+        </div>
+        <a href="#" class="read-more-btn">
+          <span class="btn-text">Read More</span>
+          <span class="btn-box left"></span>
+          <span class="btn-box right"></span>
+        </a>
+      </div>
+    </section>
+  </div>
+<!-- Physiotherapy Mind-Body Section - English Version -->
+ 
+    <section class="physio-section">
+        <div class="container">
+            
+      <div class="physio-content" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+            <p class="subtitle">
+        <i class="fa-solid fa-book-open learn-more-icon"></i>Best-in-Class Rehab Facility
+       </p>
+  
+                <h1>Mental Health with <br><span class="highlight">Mind-Body Care</span></h1>
+                
+                <p class="physio-text">
+                    You improve your mental wellbeing through simple daily practices that strengthen your mind. You support your emotions.<br>You understand yourself better. You take clear steps toward a stable healthy life.
+                </p>
+
+                <div class="features">
+                    <div class="feature-item">
+                        <div class="icon-wrapper">
+                             <i class="bi bi-shield-check" style="font-size:24px;color:#fff;"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Mindfulness</h3>
+                            <p>You train your mind to stay calm and focused.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-wechat" style="font-size:24px;color:#fbfbfb;"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Stress Control</h3>
+                            <p>You learn how to manage pressure in a simple way.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="icon-wrapper">
+                       <i class="bi bi-kanban" style="font-size:24px;color:#fff;"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Emotional Wellbeing</h3>
+                            <p>You build healthier reactions and understand your feelings.</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <a href="#" class="cta-button">
+          <span class="btn-text">Learn More</span>
+          <span class="btn-box left"></span>
+         <span class="btn-box right"></span>
+        </a>
+            </div>
+
+            <!-- الصورة (من اليمين) -->
+            <div class="physio-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                <img src="assets/images/img15.jpg" alt="Physiotherapy Session">
+            </div>
+        </div>
+    </section>
+ <section class="about-section">
+      <div class="image-container">
+        <img src="assets/images/img26.jpg" alt="Kinesiotherapy session">
+      </div>
+
+      <div class="content-container">
+        
+       <p class="subtitle">
+        <i class="fa-solid fa-book-open learn-more-icon"></i> Learn More About Us
+       </p>
+
+        <h1>Holistic Physical Health & Body Wellness</h1>
+        <p class="description">
+          Caring for your physical health means strengthening your body, improving movement, and restoring natural balance.
+We focus on enhancing flexibility, reducing pain, supporting recovery, and promoting overall wellness through evidence-based techniques designed to keep your body active, strong, and healthy.
+        </p>
+
+        <ul class="features-list">
+          <li><span class="icon-circle"><i class="fa-solid fa-check"></i></span>100% Satisfaction</li>
+          <li><span class="icon-circle"><i class="fa-solid fa-check"></i></span>Affordable Prices</li>
+          <li><span class="icon-circle"><i class="fa-solid fa-check"></i></span>Advanced Equipments</li>
+          <li><span class="icon-circle"><i class="fa-solid fa-check"></i></span>Professional Therapists</li>
+          <li><span class="icon-circle"><i class="fa-solid fa-check"></i></span>Chiropractic Therapy</li>
+          <li><span class="icon-circle"><i class="fa-solid fa-check"></i></span>Licensed Professionals</li>
+        </ul>
+
+       <div class="stats-box">
+  <span id="counter" class="stat-number">+0</span>
+  <span class="stat-label">Team Member</span>
+</div>
+
+
+        <a href="#" class="cta-button">
+          <span class="btn-text">Read More</span>
+          <span class="btn-box left"></span>
+         <span class="btn-box right"></span>
+        </a>
+      </div>
+    </section>
+  </div>
+<section class="core-section">
         <div class="content">
             <!-- الـ Badge هنا فوق العنوان -->
             <div class="fitness-badge" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200"></div>>
@@ -64,12 +212,14 @@
             </div>
         </div>
         <div class="arched-image">
-            <img src="img30.jpeg" class="arched-img" alt="A woman stands on a beach at sunset, gazing towards the horizon. The scene is filled with warm hues of orange and pink in the sky, creating a serene atmosphere. The text Accessible Health & Wellness is subtly integrated into the scene, conveying a sense of hope and tranquility."/>
+            <img src="assets/images/img30.jpeg" class="arched-img" alt="A woman stands on a beach at sunset, gazing towards the horizon. The scene is filled with warm hues of orange and pink in the sky, creating a serene atmosphere. The text Accessible Health & Wellness is subtly integrated into the scene, conveying a sense of hope and tranquility."/>
         <div class="arched-image">
             <div class="fitness-badge">Accessible Health & Wellness</div>    
         </div>
     </section>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
+  
 </body>
 </html>

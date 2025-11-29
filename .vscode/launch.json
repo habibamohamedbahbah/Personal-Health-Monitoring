@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "edge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\Dell\\OneDrive - Nile University\\Desktop\\Home page\\index.html"
+        }
+    ]
+}
