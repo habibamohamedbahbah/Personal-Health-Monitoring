@@ -1,0 +1,57 @@
+/* ================= CARDS ================= */
+
+.service-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  transition: all 0.35s ease;
+  cursor: default;
+}
+
+.service-card i {
+  font-size: 22px;
+  color: #b89b84;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  background: #f3ece6;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .service-container {
+    grid-template-columns: 1fr;
+  }
+
+  .service-image img {
+    height: 420px;
+  }
+
+  .service-content h2 {
+    font-size: 36px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-content h2 {
+    font-size: 30px;
+  }
+}
