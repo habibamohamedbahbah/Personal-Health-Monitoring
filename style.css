@@ -1,0 +1,41 @@
+/* ===================== SERVICES BLOCKS ===================== */
+.service-block {
+  display: block;
+  padding: 120px 0;
+  background: #f9f6f1;
+}
+
+/* ================= CONTAINER ================= */
+
+.service-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ================= IMAGE FIX + SHINE ================= */
+
+.service-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+
+  /* ❗ مهم جدًا */
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+/* الصورة نفسها */
+.service-image img {
+  display: block;        
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 14px;
+}
