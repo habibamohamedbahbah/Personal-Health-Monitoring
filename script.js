@@ -59,6 +59,41 @@ const posts = [
         content: "<p>Regular stretching is essential for building flexibility and maintaining muscle strength throughout life. Dynamic stretches before exercise prepare muscles for movement and improve performance, while static stretches after activity help reduce soreness and enhance recovery. Incorporating full-body stretching routines—targeting legs, back, shoulders, and arms—increases range of motion and prevents injuries. Consistent stretching also improves posture, reduces tension, and boosts physical confidence. Even just 10-15 minutes daily can transform flexibility and keep your body feeling strong and balanced.</p>"
     }
 ];
+ // BLOG POST READ MORE FUNCTIONALITY - Truncate text
+    document.querySelectorAll('.post').forEach(post => {
+        const paragraph = post.querySelector('.post-content p');
+        const btn = post.querySelector('.read-more');
+        
+        if (paragraph && btn) {
+            const fullText = paragraph.textContent;
+            const truncateLength = 200; // عدد الأحرف
+            const truncated = fullText.substring(0, truncateLength) + '...';
+            
+            paragraph.setAttribute('data-full-text', fullText);
+            paragraph.setAttribute('data-truncated', truncated);
+            
+            
+            paragraph.textContent = truncated;
+            
+          
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                if (paragraph.classList.contains('expanded')) {
+
+                    paragraph.textContent = truncated;
+                    paragraph.classList.remove('expanded');
+                    btn.textContent = 'Read more';
+                } else {
+    
+                    paragraph.textContent = fullText;
+                    paragraph.classList.add('expanded');
+                    btn.textContent = 'Show less';
+                }
+            });
+        }
+    });
+    
 
 // Back to blog function
 window.backToBlog = function() {
