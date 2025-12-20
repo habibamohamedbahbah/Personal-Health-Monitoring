@@ -1,39 +1,68 @@
-<div id="mentalHealthCarePage" class="page">
-            <div class="page-header">
-                <h1><i class="fas fa-brain"></i> Mental Health Care</h1>
-                <p>Personalized emotional and psychological support for a balanced life</p>
+ <!-- Mental Health Care Page -->
+       <div id="mentalHealthCarePage" class="page">
+    <div class="page-header">
+        <h1><i class="fas fa-brain"></i> Mental Health Care</h1>
+        <p>Personalized emotional and psychological support for a balanced life</p>
+    </div>
+    
+    <section class="service-block" style="margin-top: 40px; padding: 60px 5%;">
+        <div class="service-container">
+            <!-- Image -->
+            <div class="service-image">
+                <img src="img15.jpg" alt="Mental Health">
             </div>
-            
-            <section class="service-block" style="margin-top: 40px; padding: 60px 5%;">
-                <div class="service-container">
-                    <!-- Image -->
-                    <div class="service-image">
-                        <img src="img15.jpg" alt="Mental Health">
+
+            <!-- Content -->
+            <div class="service-content">
+                <h2>Mental Health Care Services</h2>
+                <p class="service-subtitle">
+                    Comprehensive emotional and psychological support tailored to your needs.
+                </p>
+
+                <div class="service-grid">
+                    <div class="service-card" onclick="openService('emotional')">
+                        <i class="bi bi-heart"></i> Emotional Support
                     </div>
-
-                    <!-- Content -->
-                    <div class="service-content">
-                        <h2>Mental Health Care Services</h2>
-                        <p class="service-subtitle">
-                            Comprehensive emotional and psychological support tailored to your needs.
-                        </p>
-
-                        <div class="service-grid">
-                            <div class="service-card"><i class="bi bi-heart"></i> Emotional Support</div>
-                            <div class="service-card"><i class="bi bi-robot"></i> AI Mental Assistant</div>
-                            <div class="service-card"><i class="bi bi-emoji-smile"></i> Mood Tracking</div>
-                            <div class="service-card"><i class="bi bi-lightning"></i> Stress Management</div>
-                            <div class="service-card"><i class="bi bi-wind"></i> Mindfulness</div>
-                            <div class="service-card"><i class="bi bi-clipboard-check"></i> Self Tests</div>
-                            <div class="service-card"><i class="bi bi-play-circle"></i> Therapy Videos</div>
-                            <div class="service-card"><i class="bi bi-file-earmark-pdf"></i> AI Reports</div>
-                            <div class="service-card"><i class="bi bi-exclamation-triangle"></i> Emergency Help</div>
-                        </div>
-                        
-                        <a href="#" class="cta-button" style="margin-top: 30px;" onclick="showPage('services')">
-                            <span class="btn-text">← Back to Services</span>
-                        </a>
+                    <div class="service-card" onclick="openService('ai-assistant')">
+                        <i class="bi bi-robot"></i> AI Mental Assistant
+                    </div>
+                    <div class="service-card" onclick="openService('mood')">
+                        <i class="bi bi-emoji-smile"></i> Mood Tracking
+                    </div>
+                    <div class="service-card" onclick="openService('stress')">
+                        <i class="bi bi-lightning"></i> Stress Management
+                    </div>
+                    <div class="service-card" onclick="openService('mindfulness')">
+                        <i class="bi bi-wind"></i> Mindfulness
+                    </div>
+                    <div class="service-card" onclick="openService('tests')">
+                        <i class="bi bi-clipboard-check"></i> Self Tests
+                    </div>
+                    <div class="service-card" onclick="openService('videos')">
+                        <i class="bi bi-play-circle"></i> Therapy Videos
+                    </div>
+                    <div class="service-card" onclick="openService('reports')">
+                        <i class="bi bi-file-earmark-pdf"></i> AI Reports
+                    </div>
+                    <div class="service-card" onclick="openService('emergency')">
+                        <i class="bi bi-exclamation-triangle"></i> Emergency Help
                     </div>
                 </div>
-            </section>
+                
+                <a href="#" class="cta-button" style="margin-top: 30px;" onclick="showPage('services')">
+                    <span class="btn-text">← Back to Services</span>
+                </a>
+            </div>
         </div>
+    </section>
+</div>
+
+<div id="serviceModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+
+        <div id="modalBody">
+            
+        </div>
+    </div>
+</div>
