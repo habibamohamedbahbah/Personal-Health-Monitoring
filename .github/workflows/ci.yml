@@ -15,4 +15,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run basic check
-        run: echo ":https://habibamohamedbahbah.github.io/Personal-Health-Monitoring/"
+        run: echo "https://habibamohamedbahbah.github.io/Personal-Health-Monitoring/"
