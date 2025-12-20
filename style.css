@@ -2,115 +2,199 @@
 #admin-dashboard {
   display: none !important;
 }
+
 .blog-section {
   background: #f8f9fa;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
+
 .blog-container {
   max-width: 1300px;
   margin: auto;
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 40px;
-  align-items: start;
 }
 .sidebar {
-  background: #1e3a5f;
-  padding: 35px;
-  border-radius: 15px;
-  position: sticky;
-  top: 100px;
-  order: -1;
+  display: none;
 }
-.sidebar h3 {
-  font-size: 1.9rem;
-  margin-bottom: 30px;
-  color: #e8b923;
-}
-.sidebar ul li {
-  padding: 14px 0;
-  border-bottom: 1px solid #2a5079;
-  font-size: 1.05rem;
-}
-.sidebar ul li:last-child {
-  border: none;
-}
-.sidebar ul li a {
-  color: #ccc;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.sidebar ul li a:hover {
-  color: #e8b923;
-  padding-right: 10px;
-}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px; 
   padding: 0;
 }
 .post {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: 0.4s;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+  transition: all 0.4s ease;
   cursor: pointer;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
 }
+
 .post:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
 }
+
 .post img {
   width: 100%;
-  height: 250px;
+  height: 280px; 
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
+
+.post:hover img {
+  transform: scale(1.05);
+}
+
 .post-content {
-  padding: 25px;
+  padding: 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
+
 .post h3 {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-  color: #2c3e50;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #1e3a5f;
+  line-height: 1.4;
+  font-weight: 600;
+  min-height: 75px;
 }
+
+.post p {
+  font-size: 1.05rem; 
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
 .read-more {
-  color: #000;
+  color: #1e3a5f;
   font-weight: bold;
   text-decoration: none;
-  border-bottom: 2px solid #000;
-  padding-bottom: 3px;
+  border-bottom: 3px solid #e8b923;
+  padding-bottom: 5px;
   transition: all 0.3s ease;
   display: inline-block;
+  font-size: 1.1rem;
+  margin-top: auto; 
 }
+
 .read-more:hover {
-  opacity: 0.8;
-  transform: translateY(-2px);
+  color: #e8b923;
+  padding-right: 10px;
+  border-bottom-color: #1e3a5f;
 }
+
 .read-more:active {
   transform: translateY(2px);
-  opacity: 0.6;
+  opacity: 0.8;
 }
+
 .single-post {
   display: none;
   padding: 80px 0;
   min-height: 100vh;
   background: #fff;
 }
+
 .single-post.active {
   display: block;
 }
+
 .single-post img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  max-height: 500px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  max-height: 550px;
   object-fit: cover;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
+
 .back-btn {
-  color: #e74c3c;
+  background: #1e3a5f;
+  color: white;
   font-weight: bold;
   margin-bottom: 30px;
   display: inline-block;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #e8b923;
+  color: #1e3a5f;
+  transform: translateX(-5px);
+}
+
+/* تصميم متجاوب */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 40px 15px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr; 
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .post {
+    min-height: auto;
+  }
+  
+  .post img {
+    height: 240px;
+  }
+  
+  .post-content {
+    padding: 25px;
+  }
+  
+  .post h3 {
+    font-size: 1.4rem;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-section {
+    padding: 30px 10px;
+  }
+  
+  .grid {
+    gap: 20px;
+  }
+  
+  .post img {
+    height: 200px;
+  }
+  
+  .post-content {
+    padding: 20px;
+  }
+  
+  .post h3 {
+    font-size: 1.3rem;
+  }
+  
+  .post p {
+    font-size: 1rem;
+  }
 }
