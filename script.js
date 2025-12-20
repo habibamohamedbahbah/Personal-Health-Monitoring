@@ -1,6 +1,4 @@
 
-<<<<<<< HEAD
-
 window.addEventListener("load", () => {
   
   setTimeout(() => {
@@ -299,7 +297,6 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(statsSection);
 });
 
-=======
 // ===== VIDEO MODAL =====
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('videoModal');
@@ -348,4 +345,3 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape' && modal.classList.contains('active')) closeVideo();
     });
 });
->>>>>>> Feature/Video
