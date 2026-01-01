@@ -1,4 +1,154 @@
-git commit -m "Initial commit"
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VivaiQ - Personal Health Monitoring</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Stardom&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <video src="img2.mp4" autoplay muted loop></video>
+    </div>
+    
+    <!-- Floating Settings -->
+    <div class="floating-settings">
+        <div class="settings-trigger"></div>
+        <button class="settings-circle" data-mode="dark" title="Dark Mode"><i class="fas fa-moon"></i></button>
+        <button class="settings-circle" data-mode="light" title="Light Mode"><i class="fas fa-sun"></i></button>
+        <button class="settings-circle" id="fontPlus" title="Increase Font"><i class="fas fa-plus"></i></button>
+        <button class="settings-circle" id="fontMinus" title="Decrease Font"><i class="fas fa-minus"></i></button>
+        <button class="settings-circle" data-mode="contrast" title="High Contrast"><i class="fas fa-adjust"></i></button>
+    </div>
+    
+    <!-- Login / Sign Up Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="showLogin()">Login</button>
+                <button class="tab-btn" onclick="showSignup()">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active">
+                <h2>Welcome Back!</h2>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p class="switch-text">Don't have an account? <span onclick="showSignup()">Sign Up</span></p>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signupForm" class="auth-form">
+                <h2>Create Your Account</h2>
+                <input type="text" id="fullName" placeholder="Full Name (min 12 characters)" required>
+                <small class="error" id="nameError"></small>
+                <input type="email" id="email" placeholder="Email" required>
+                <small class="error" id="emailError"></small>
+                <input type="text" id="phone" placeholder="Phone: 01xxxxxxxxx" maxlength="11" required>
+                <small class="error" id="phoneError"></small>
+                <input type="password" id="password" placeholder="Password (8+ chars, capital, number, symbol)" required>
+                <small class="error" id="passError"></small>
+                <input type="password" id="confirmPass" placeholder="Confirm Password" required>
+                <small class="error" id="confirmError"></small>
+                <label class="checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <span>I agree to the <a href="#">Terms & Conditions</a></span>
+                </label>
+                <button type="submit">Create Account</button>
+                <p class="switch-text">Already have an account? <span onclick="showLogin()">Login</span></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal" aria-hidden="true">
+        <div class="video-wrap">
+            <button class="close-video" id="closeVideo" aria-label="Close video">&times;</button>
+            <video id="modalVideo" controls preload="metadata"></video>
+        </div>
+    </div>
+
+    <!-- Blog Post Modal -->
+    <div id="blogModal" class="blog-modal">
+        <div class="blog-modal-content">
+            <button class="blog-modal-close" id="closeBlogModal">&times;</button>
+            <div class="blog-modal-card">
+                <img id="blogModalImage" src="" alt="Blog post image" class="blog-modal-image">
+                <div class="blog-modal-body">
+                    <h2 id="blogModalTitle"></h2>
+                    <p id="blogModalText"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <!-- Header -->
+        <header>
+            <div class="logo">VivaiQ</div>
+            <nav id="navbar">
+                <a href="#" data-page="home" id="home-link" class="nav-link active">Home</a>
+                <a href="#" data-page="about" id="about-link" class="nav-link">About</a>
+                <div class="dropdown" id="servicesDropdown">
+                    <a href="#" data-page="services" id="services-link" class="dropdown-toggle nav-link">Services <i class="bi bi-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#" data-page="mentalHealthCare" id="mental-health-link" class="nav-link">Mental Health Care</a>
+                        <a href="#" data-page="physicalHealthRehab" id="physical-health-link" class="nav-link">Physical Health & Rehab</a>
+                        <a href="#" data-page="signLanguageAccess" id="sign-language-link" class="nav-link">Sign Language & Access</a>
+                    </div>
+                </div>
+                <a href="#" data-page="blog" id="blog-link" class="nav-link">Blog</a>
+                <a href="#" data-page="contact" id="contact-link" class="nav-link">Contact</a>
+                <a href="#" data-page="dashboard" id="dashboard-link" class="appointment-btn login-btn nav-link" style="display:none;">Dashboard</a>
+                <a href="#" id="login-trigger" class="appointment-btn login-btn">Login</a>
+                <div class="search-container">
+                    <i class="bi bi-search search-icon" id="searchIcon"></i>
+                    <div class="search-box" id="searchBox">
+                        <input type="text" id="searchInput" placeholder="Search anything..." />
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                </div>
+            </nav>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="bi bi-menu-button-wide"></i>
+            </div>
+        </header>
+
+        <!-- Home Page -->
+        <div id="homePage" class="page active">
+            <section class="hero">
+                <div class="hero-bg"></div>
+                <div class="hero-content" style="margin-top: 270px;">
+                    <div class="holistic-text" id="holisticText">
+                        Because every human deserves to move, feel, and live at full strength – regardless of their abilities.
+                    </div>
+                  <a href="#" class="read-more-btn" onclick="showPage('about'); return false;">
+                    <span class="btn-text">Read More</span>
+                    <span class="btn-box left"></span>
+                    <span class="btn-box right"></span>
+                    </a>
+                </div>
+            </section>
+
+
 
 <!-- Physiotherapy Mind-Body Section - English Version -->
  
