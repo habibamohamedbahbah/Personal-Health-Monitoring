@@ -150,7 +150,7 @@ if (searchInput && searchResults) {
 // ===== HERO BACKGROUND SLIDESHOW =====
 const heroBg = document.querySelector('.hero-bg');
 if (heroBg) {
-    const images = ["img4.jpg", "img11.jpeg", "img20.jpg"];
+    const images = ["assets/images/img4.jpg", "assets/images/img11.jpeg", "assets/images/img20.jpg"];
     let heroCurrent = 0;
     
     heroBg.style.backgroundImage = `url(${images[heroCurrent]})`;
@@ -400,32 +400,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const blogPostsData = {
         1: {
             title: "How to build a supportive community in group therapy sessions",
-            image: "images/blo_image_1.jpg",
+            image: "assets/images/blog7.jpeg",
             fullText: "Building a supportive community in group therapy sessions is essential for mental and emotional healing. A strong community provides encouragement, understanding, and a sense of belonging during difficult times.\n\nKey strategies for building support:\n\n• Open Communication: Create an environment where members feel safe expressing their thoughts and feelings without judgment.\n\n• Active Listening: Practice listening with empathy and attention to what others are sharing.\n\n• Shared Experiences: Recognize that group members often face similar challenges, which can strengthen bonds.\n\n• Confidentiality: Maintain strict privacy and ensure all discussions remain confidential.\n\n• Group Participation: Encourage all members to contribute at their comfort level.\n\n• Regular Meetings: Consistency helps build trust and deeper connections.\n\nA strong support system enhances emotional resilience and promotes long-term mental health and well-being."
         },
         2: {
             title: "Overcoming anxiety: the role of psychologists in mental health",
-            image: "images/blog_image_2.jpg",
+            image: "assets/images/blog2.jpeg",
             fullText: "Anxiety disorders are among the most common mental health challenges, affecting emotional stability, concentration, and daily functioning. Persistent worry and fear can interfere with personal relationships and professional life.\n\nHow psychologists help:\n\n• Assessment and Diagnosis: Professional evaluation helps identify the type and severity of anxiety.\n\n• Cognitive Behavioral Therapy (CBT): This proven approach helps identify thought patterns that contribute to anxiety and develops healthier thinking strategies.\n\n• Exposure Therapy: Gradual exposure to anxiety triggers in a safe environment helps build confidence.\n\n• Mindfulness and Relaxation Techniques: Learning stress management tools provides relief and control.\n\n• Medication Consultation: When appropriate, psychologists can coordinate with psychiatrists for medication support.\n\n• Coping Strategies: Development of practical tools for managing anxiety in daily life.\n\nPsychological guidance empowers individuals to regain control over their thoughts and emotions, leading to long-term mental stability and improved quality of life."
         },
         3: {
             title: "Tips for Improving Foot Pain",
-            image: "images/blog_image_3.jpg",
+            image: "assets/images/blog8.png",
             fullText: "Foot pain can significantly impact your daily life and mobility. Understanding the causes and treatments can help you achieve relief and maintain an active lifestyle.\n\nCommon causes of foot pain:\n• Plantar fasciitis\n• Flat feet or high arches\n• Improper footwear\n• Repetitive strain\n• Muscle imbalances\n\nEffective solutions:\n\n• Proper Footwear: Invest in shoes with good arch support and cushioning.\n\n• Stretching Exercises: Regular foot and calf stretches improve flexibility and reduce tension.\n\n• Massage and Self-Care: Foot massages and warm water soaks promote circulation and relaxation.\n\n• Orthotic Insoles: Custom or over-the-counter insoles provide support and alignment.\n\n• Physical Therapy: Professional guidance helps address underlying biomechanical issues.\n\n• Rest and Ice: Allow adequate recovery time and use ice to reduce inflammation.\n\nConsistent care and preventive measures can help you maintain healthy feet and stay active."
         },
         4: {
             title: "The Importance of Movement",
-            image: "images/blog-img-6.jpg",
+            image: "assets/images/blog6.jpeg",
             fullText: "Movement and exercise are fundamental to maintaining physical and mental health. Regular activity strengthens your body, improves mood, and supports emotional well-being.\n\nBenefits of movement:\n\n• Physical Health: Exercise strengthens muscles and bones, improves cardiovascular health, and enhances metabolism.\n\n• Mental Well-being: Movement releases endorphins, reduces stress, and improves mood.\n\n• Balance and Coordination: Regular activity improves body awareness and stability.\n\n• Energy Levels: Physical activity increases energy and reduces fatigue.\n\n• Sleep Quality: Exercise promotes better sleep patterns.\n\nTypes of beneficial movement:\n• Cardiovascular exercise (walking, running, swimming)\n• Strength training\n• Flexibility work (stretching, yoga)\n• Daily movement (stairs, gardening, dancing)\n\nFinding activities you enjoy makes it easier to maintain a consistent exercise routine. Start gradually and increase intensity as your fitness improves."
         },
         5: {
             title: "Heat & Acupuncture: Reduces neck pain",
-            image: "images/blog-img-04.jpg",
+            image: "assets/images/blog1.jpeg",
             fullText: "Neck pain is one of the most common physical complaints in modern life, especially among people who spend long hours working at desks or using electronic devices. Poor posture, muscle tension, and stress are major contributors to chronic neck discomfort.\n\nBenefits of Heat Therapy:\n\n• Increases blood flow to the affected area\n• Helps muscles relax and reduces stiffness\n• Improves oxygen delivery to tissues\n• Accelerates the healing process\n• Reduces pain signals sent to the brain\n\nBenefits of Acupuncture:\n\n• Targets specific pressure points in the body\n• Releases endorphins for natural pain relief\n• Reduces inflammation\n• Balances the nervous system\n• Improves overall body function\n\nCombined Treatment Benefits:\n\nWhen heat therapy is combined with acupuncture, patients often experience faster pain relief and improved neck mobility compared to using either method alone. Regular sessions under the supervision of trained professionals can significantly improve posture, reduce recurring pain, and enhance overall physical comfort.\n\nAlways consult a licensed therapist to ensure the treatment is appropriate for your condition."
         },
         6: {
             title: "Stretching Techniques for Better Flexibility & Strength",
-            image: "images/blog.jpg",
+            image: "assets/images/blog4.jpeg",
             fullText: "Stretching is a fundamental component of physical health that is often overlooked. Regular stretching improves muscle elasticity, joint mobility, and posture while reducing the risk of injuries.\n\nTypes of Stretching:\n\n• Dynamic Stretching: Involves movement and is best performed before physical activity to prepare muscles for movement and enhance performance.\n\n• Static Stretching: Involves holding a position and is best performed after exercise. It helps muscles relax and recover, reducing soreness and stiffness.\n\n• Proprioceptive Neuromuscular Facilitation (PNF): An advanced technique involving contracting and relaxing muscles.\n\nBenefits of Regular Stretching:\n\n• Improves circulation and blood flow\n• Reduces stress on joints\n• Promotes better coordination and balance\n• Increases range of motion\n• Reduces muscle tension and soreness\n• Improves posture\n\nStretching Tips:\n\n• Warm up before stretching\n• Hold stretches for 15-30 seconds\n• Breathe deeply and relax\n• Never bounce or force a stretch\n• Consistency is key - stretch daily\n\nWhether you are an athlete or someone with a sedentary lifestyle, proper stretching techniques can significantly improve your physical well-being and prevent injuries."
         }
     };
@@ -771,7 +771,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const profileImage = document.getElementById("profileImage");
     const imageInput = document.getElementById("profileImageInput");
     const deleteBtn = document.getElementById("deletePhotoBtn");
-    const defaultImage = "img50.webp";
+    const defaultImage = "assets/images/img50.webp";
     
     if (!profileImage || !imageInput || !deleteBtn) return;
     
@@ -5368,7 +5368,7 @@ document.addEventListener('DOMContentLoaded', function() {
         deletePhotoBtn.addEventListener('click', function() {
             const profileImage = document.getElementById('profileImage');
             if (profileImage) {
-                profileImage.src = 'img50.webp'; // الصورة الافتراضية
+                profileImage.src = 'assets/images/img50.webp'; // الصورة الافتراضية
                 localStorage.removeItem('profileImage');
             }
         });
@@ -5403,7 +5403,7 @@ function logout() {
     // إعادة تعيين الصورة الافتراضية
     const profileImage = document.getElementById('profileImage');
     if (profileImage) {
-        profileImage.src = 'img50.webp';
+        profileImage.src = 'assets/images/img50.webp';
     }
 }// ==================== SIGN LANGUAGE SERVICES ====================
 
