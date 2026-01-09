@@ -5737,5 +5737,893 @@ body.high-contrast .settings-circle {
         display: none;
     }
 
+/* ==================== SIGN LANGUAGE & ACCESSIBILITY PAGE ==================== */
+#signLanguageAccessPage {
+    background: linear-gradient(135deg, #fff 0%, #ffffff 100%);
+    min-height: 100vh;
+}
 
-    
+#signLanguageAccessPage .page-header {
+    background: linear-gradient(135deg, #8c7473 0%, #6d4f3e 100%);
+    color: #fff;
+    padding: 140px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#signLanguageAccessPage .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('assets/images/signlanguage.jpeg') center/cover no-repeat;
+    opacity: 0.12;
+    z-index: 0;
+}
+
+#signLanguageAccessPage .page-header h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 1;
+}
+
+#signLanguageAccessPage .page-header h1 i {
+    color: #d4a574;
+}
+
+#signLanguageAccessPage .page-header p {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 20px auto 0;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* Service Block - نفس الستايل الموجود في الصفحات الأخرى لكن بتعديل لوني خفيف */
+#signLanguageAccessPage .service-block {
+    padding: 100px 5%;
+    background: transparent;
+}
+
+#signLanguageAccessPage .service-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+#signLanguageAccessPage .service-image {
+    flex: 1;
+    min-width: 320px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(90, 66, 65, 0.18);
+    position: relative;
+}
+
+#signLanguageAccessPage .service-image img {
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+#signLanguageAccessPage .service-image:hover img {
+    transform: scale(1.08);
+}
+
+/* Shine Effect على الصورة */
+#signLanguageAccessPage .service-image::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -80%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    animation: shine 4s linear infinite;
+    z-index: 2;
+}
+
+@keyframes shine {
+    0% { left: -80%; }
+    100% { left: 120%; }
+}
+
+#signLanguageAccessPage .service-content {
+    flex: 1;
+    min-width: 320px;
+}
+
+#signLanguageAccessPage .service-content h2 {
+    font-size: 3.2rem;
+    color: #5a4241;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+#signLanguageAccessPage .service-subtitle {
+    font-size: 1.25rem;
+    color: #8c7473;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    max-width: 600px;
+}
+
+#signLanguageAccessPage .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+#signLanguageAccessPage .service-card {
+    background: #fff;
+    padding: 28px 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(90, 66, 65, 0.08);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+#signLanguageAccessPage .service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 55px rgba(90, 66, 65, 0.18);
+    border-color: #8c7473;
+    background: #fdf8f5;
+}
+
+#signLanguageAccessPage .service-card i {
+    font-size: 2.8rem;
+    color: #8c7473;
+    margin-bottom: 18px;
+    transition: color 0.4s ease;
+}
+
+#signLanguageAccessPage .service-card:hover i {
+    color: #5a4241;
+}
+
+#signLanguageAccessPage .service-card:hover {
+    color: #5a4241;
+}
+
+/* CTA Button */
+#signLanguageAccessPage .cta-button {
+    margin-top: 40px;
+    display: inline-block;
+}
+
+/* Modal للتفاصيل (نفس الستايل الموجود) */
+#signLanguageAccessPage .service-detail-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 20px;
+}
+
+#signLanguageAccessPage .service-detail-modal.active {
+    display: flex;
+}
+
+#signLanguageAccessPage .service-detail-modal .modal-content {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+#signLanguageAccessPage .service-detail-modal .modal-header {
+    background: linear-gradient(135deg, #8c7473, #6d4f3e);
+    color: white;
+    padding: 25px 30px;
+    border-radius: 20px 20px 0 0;
+}
+
+#signLanguageAccessPage .service-detail-modal .modal-body {
+    padding: 40px;
+    color: #444;
+    line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    #signLanguageAccessPage .service-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    #signLanguageAccessPage .service-image img {
+        height: 460px;
+    }
+
+    #signLanguageAccessPage .service-content h2 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #signLanguageAccessPage .page-header h1 {
+        font-size: 3rem;
+    }
+
+    #signLanguageAccessPage .service-content h2 {
+        font-size: 2.4rem;
+    }
+
+    #signLanguageAccessPage .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #signLanguageAccessPage .service-image img {
+        height: 380px;
+    }
+}
+
+@media (max-width: 576px) {
+    #signLanguageAccessPage .page-header {
+        padding: 100px 20px 60px;
+    }
+
+    #signLanguageAccessPage .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    #signLanguageAccessPage .service-content h2 {
+        font-size: 2.1rem;
+    }
+}
+
+/* ==================== PHYSICAL HEALTH & REHABILITATION PAGE ==================== */
+#physicalHealthRehabPage {
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+    min-height: 100vh;
+}
+
+#physicalHealthRehabPage .page-header {
+    background: linear-gradient(135deg, #8c7473 0%, #6d4f3e 100%);
+    color: #fff;
+    padding: 140px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#physicalHealthRehabPage .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('assets/images/image65.jpg') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+#physicalHealthRehabPage .page-header h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 1;
+}
+
+#physicalHealthRehabPage .page-header h1 i {
+    color: #d4a574;
+}
+
+#physicalHealthRehabPage .page-header p {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 20px auto 0;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* Service Block */
+#physicalHealthRehabPage .service-block {
+    padding: 100px 5%;
+    background: transparent;
+}
+
+#physicalHealthRehabPage .service-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+#physicalHealthRehabPage .service-image {
+    flex: 1;
+    min-width: 320px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(90, 66, 65, 0.18);
+    position: relative;
+}
+
+#physicalHealthRehabPage .service-image img {
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+#physicalHealthRehabPage .service-image:hover img {
+    transform: scale(1.08);
+}
+
+/* Shine Effect */
+#physicalHealthRehabPage .service-image::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -80%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    animation: shine 4s linear infinite;
+    z-index: 2;
+}
+
+@keyframes shine {
+    0% { left: -80%; }
+    100% { left: 120%; }
+}
+
+#physicalHealthRehabPage .service-content {
+    flex: 1;
+    min-width: 320px;
+}
+
+#physicalHealthRehabPage .service-content h2 {
+    font-size: 3.2rem;
+    color: #5a4241;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+#physicalHealthRehabPage .service-subtitle {
+    font-size: 1.25rem;
+    color: #8c7473;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    max-width: 600px;
+}
+
+#physicalHealthRehabPage .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+#physicalHealthRehabPage .service-card {
+    background: #fff;
+    padding: 28px 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(90, 66, 65, 0.08);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+#physicalHealthRehabPage .service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 55px rgba(90, 66, 65, 0.18);
+    border-color: #8c7473;
+    background: #f8fdf8;
+}
+
+#physicalHealthRehabPage .service-card i {
+    font-size: 2.8rem;
+    color: #8c7473;
+    margin-bottom: 18px;
+    transition: color 0.4s ease;
+}
+
+#physicalHealthRehabPage .service-card:hover i {
+    color: #5a4241;
+}
+
+/* CTA Button */
+#physicalHealthRehabPage .cta-button {
+    margin-top: 40px;
+    display: inline-block;
+}
+
+/* Modal للتفاصيل (نفس الستايل) */
+#physicalHealthRehabPage .service-detail-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 20px;
+}
+
+#physicalHealthRehabPage .service-detail-modal.active {
+    display: flex;
+}
+
+#physicalHealthRehabPage .service-detail-modal .modal-content {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+#physicalHealthRehabPage .service-detail-modal .modal-header {
+    background: linear-gradient(135deg, #8c7473, #6d4f3e);
+    color: white;
+    padding: 25px 30px;
+    border-radius: 20px 20px 0 0;
+}
+
+#physicalHealthRehabPage .service-detail-modal .modal-body {
+    padding: 40px;
+    color: #444;
+    line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    #physicalHealthRehabPage .service-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    #physicalHealthRehabPage .service-image img {
+        height: 460px;
+    }
+
+    #physicalHealthRehabPage .service-content h2 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #physicalHealthRehabPage .page-header h1 {
+        font-size: 3rem;
+    }
+
+    #physicalHealthRehabPage .service-content h2 {
+        font-size: 2.4rem;
+    }
+
+    #physicalHealthRehabPage .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #physicalHealthRehabPage .service-image img {
+        height: 380px;
+    }
+}
+
+@media (max-width: 576px) {
+    #physicalHealthRehabPage .page-header {
+        padding: 100px 20px 60px;
+    }
+
+    #physicalHealthRehabPage .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    #physicalHealthRehabPage .service-content h2 {
+        font-size: 2.1rem;
+    }
+}
+/* ==================== MENTAL HEALTH CARE PAGE ==================== */
+#mentalHealthCarePage {
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+    min-height: 100vh;
+}
+
+#mentalHealthCarePage .page-header {
+    background: linear-gradient(135deg, #8c7473 0%, #6d4f3e 100%);
+    color: #fff;
+    padding: 140px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#mentalHealthCarePage .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('assets/images/img15.jpg') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+#mentalHealthCarePage .page-header h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 1;
+}
+
+#mentalHealthCarePage .page-header h1 i {
+    color: #d4a574;
+}
+
+#mentalHealthCarePage .page-header p {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 20px auto 0;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* Service Block */
+#mentalHealthCarePage .service-block {
+    padding: 100px 5%;
+    background: transparent;
+}
+
+#mentalHealthCarePage .service-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+#mentalHealthCarePage .service-image {
+    flex: 1;
+    min-width: 320px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(90, 66, 65, 0.18);
+    position: relative;
+}
+
+#mentalHealthCarePage .service-image img {
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+#mentalHealthCarePage .service-image:hover img {
+    transform: scale(1.08);
+}
+
+/* Shine Effect */
+#mentalHealthCarePage .service-image::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -80%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    animation: shine 4s linear infinite;
+    z-index: 2;
+}
+
+@keyframes shine {
+    0% { left: -80%; }
+    100% { left: 120%; }
+}
+
+#mentalHealthCarePage .service-content {
+    flex: 1;
+    min-width: 320px;
+}
+
+#mentalHealthCarePage .service-content h2 {
+    font-size: 3.2rem;
+    color: #5a4241;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+#mentalHealthCarePage .service-subtitle {
+    font-size: 1.25rem;
+    color: #8c7473;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    max-width: 600px;
+}
+
+#mentalHealthCarePage .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+#mentalHealthCarePage .service-card {
+    background: #fff;
+    padding: 28px 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(90, 66, 65, 0.08);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+#mentalHealthCarePage .service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 55px rgba(90, 66, 65, 0.18);
+    border-color: #8c7473;
+    background: #f0f4ff;
+}
+
+#mentalHealthCarePage .service-card i {
+    font-size: 2.8rem;
+    color: #8c7473;
+    margin-bottom: 18px;
+    transition: color 0.4s ease;
+}
+
+#mentalHealthCarePage .service-card:hover i {
+    color: #5a4241;
+}
+
+/* CTA Button */
+#mentalHealthCarePage .cta-button {
+    margin-top: 40px;
+    display: inline-block;
+}
+
+/* Modal للتفاصيل */
+#mentalHealthCarePage .service-detail-modal,
+#mentalHealthCarePage #serviceModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 20px;
+}
+
+#mentalHealthCarePage .service-detail-modal.active,
+#mentalHealthCarePage #serviceModal.active {
+    display: flex;
+}
+
+#mentalHealthCarePage .service-detail-modal .modal-content,
+#mentalHealthCarePage #serviceModal .modal-content {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+#mentalHealthCarePage .service-detail-modal .modal-header,
+#mentalHealthCarePage #serviceModal .modal-header {
+    background: linear-gradient(135deg, #8c7473, #6d4f3e);
+    color: white;
+    padding: 25px 30px;
+    border-radius: 20px 20px 0 0;
+}
+
+#mentalHealthCarePage .service-detail-modal .modal-body,
+#mentalHealthCarePage #modalBody {
+    padding: 40px;
+    color: #444;
+    line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    #mentalHealthCarePage .service-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    #mentalHealthCarePage .service-image img {
+        height: 460px;
+    }
+
+    #mentalHealthCarePage .service-content h2 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #mentalHealthCarePage .page-header h1 {
+        font-size: 3rem;
+    }
+
+    #mentalHealthCarePage .service-content h2 {
+        font-size: 2.4rem;
+    }
+
+    #mentalHealthCarePage .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #mentalHealthCarePage .service-image img {
+        height: 380px;
+    }
+}
+
+@media (max-width: 576px) {
+    #mentalHealthCarePage .page-header {
+        padding: 100px 20px 60px;
+    }
+
+    #mentalHealthCarePage .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    #mentalHealthCarePage .service-content h2 {
+        font-size: 2.1rem;
+    }
+}
+/* ==================== SERVICE GRID - 3 CARDS SIDE BY SIDE ==================== */
+/* الكروت تبقى 3 جنب بعض على الديسكتوب واللابتوب الكبير */
+#mentalHealthCarePage .service-grid,
+#physicalHealthRehabPage .service-grid,
+#signLanguageAccessPage .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* مسافة مريحة بين الكروت */
+}
+
+/* على شاشات التابلت (من 768px لـ 1024px) نخليها 3 برضو لو المساحة تكفي */
+@media (min-width: 769px) and (max-width: 1200px) {
+    #mentalHealthCarePage .service-grid,
+    #physicalHealthRehabPage .service-grid,
+    #signLanguageAccessPage .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+/* على شاشات التابلت الصغيرة والموبايل الكبير (أقل من 768px) نخليها 2 */
+@media (max-width: 768px) {
+    #mentalHealthCarePage .service-grid,
+    #physicalHealthRehabPage .service-grid,
+    #signLanguageAccessPage .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* على الموبايل الصغير (أقل من 560px) نخليها عمود واحد عشان الراحة */
+@media (max-width: 560px) {
+    #mentalHealthCarePage .service-grid,
+    #physicalHealthRehabPage .service-grid,
+    #signLanguageAccessPage .service-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* نزود حجم الكارت شوية عشان يبقى مريح على الموبايل */
+    #mentalHealthCarePage .service-card,
+    #physicalHealthRehabPage .service-card,
+    #signLanguageAccessPage .service-card {
+        padding: 32px 24px;
+    }
+
+    #mentalHealthCarePage .service-card i,
+    #physicalHealthRehabPage .service-card i,
+    #signLanguageAccessPage .service-card i {
+        font-size: 2.5rem;
+    }
+}
+.sign-language-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 800px;
+    margin: 8vh auto;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.service-detail-content h3 {
+    color: #5a4241;
+    margin-bottom: 15px;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.action-btn {
+    background: #5a4241;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.action-btn.secondary {
+    background: transparent;
+    border: 2px solid #5a4241;
+    color: #5a4241;
+}
+
+.team-info {
+    background: #f9f7f5;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #5a4241;
+}
+
+.team-info h3 {
+    margin: 0;
+}
+
+.team-info .role {
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.team-info .location {
+    font-size: 14px;
+    color: #555;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    background: #5a4241;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+}
