@@ -5405,527 +5405,164 @@ function logout() {
     if (profileImage) {
         profileImage.src = 'assets/images/img50.webp';
     }
-}// ==================== SIGN LANGUAGE SERVICES ====================
-
-// Service Data for Sign Language
+}
+// ==================== SIGN LANGUAGE SERVICES DATA ====================
 const signLanguageServices = {
     'Signed Videos': {
-    icon: 'bi-camera-video',
-    title: 'Signed Videos',
-    description: 'Professional medical videos translated into sign language',
-    content: `
+        icon: 'bi-camera-video',
+        title: 'Signed Videos',
+        description: 'Professional medical videos translated into sign language',
+        content: `
         <div class="service-detail-content">
             <h3><i class="bi bi-camera-video"></i> Signed Videos</h3>
-            <p>Accessible medical education videos with professional sign language interpretation.</p>
+            <p>Live sign language detection and translation to text.</p>
 
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-video"></i>
-                    <span>Medical Procedure Demonstrations</span>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-pills"></i>
-                    <span>Medication Instruction Videos</span>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-user-md"></i>
-                    <span>Doctor Consultation Videos</span>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-ambulance"></i>
-                    <span>Emergency Response Guides</span>
-                </div>
-            </div>
-
-            <!-- 📷 Sign Language Detection -->
             <div class="sign-detection">
-                <h4>Live Sign Language to Text</h4>
                 <video id="signCamera" autoplay muted></video>
+
                 <p class="recognized-text">
                     <strong>Recognized Text:</strong>
                     <span id="signOutput">Waiting for sign...</span>
                 </p>
-            </div>
 
-            <div class="service-actions">
-                <button onclick="startSignCamera()" class="action-btn">
-                    <i class="fas fa-camera"></i> Start Detection
-                </button>
-                <button onclick="stopSignCamera()" class="action-btn secondary">
-                    <i class="fas fa-stop"></i> Stop
-                </button>
-            </div>
-        </div>
-    `
-    
-},
-'Signed Consultations': {
-    icon: 'bi-chat-dots',
-    title: 'Signed Consultations',
-    description: 'Real-time video consultations with sign language interpreters',
-    content: `
-        <div class="service-detail-content">
-            <h3><i class="bi bi-chat-dots"></i> Signed Consultations</h3>
-            <p>Upload a sign language video and receive an interpreted medical response.</p>
-
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-upload"></i>
-                    <span>Upload Sign Language Video</span>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-brain"></i>
-                    <span>AI Sign Language Analysis</span>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-video"></i>
-                    <span>Interpreted Response Video</span>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Secure & Private</span>
-                </div>
-            </div>
-
-            <!-- 📤 Upload Section -->
-            <div class="upload-section">
-                <input type="file" id="signVideoUpload" accept="video/*">
-                <p id="uploadStatus">No video uploaded</p>
-            </div>
-
-            <!-- 📥 Result -->
-            <div class="result-section">
-                <h4>Interpreted Result</h4>
-                <video id="responseVideo" controls style="display:none;"></video>
-                <p id="interpretedText"></p>
-            </div>
-
-            <div class="service-actions">
-                <button onclick="uploadSignVideo()" class="action-btn">
-                    <i class="fas fa-cloud-upload-alt"></i> Upload & Analyze
-                </button>
-            </div>
-        </div>
-    `
-},
-'Visual Learning': {
-        icon: 'bi-eye',
-        title: 'Visual Learning',
-        description: 'Interactive visual tools for medical education',
-        content: `
-            <div class="service-detail-content">
-                <h3><i class="bi bi-eye"></i> Visual Learning</h3>
-                <p>Interactive medical education using visual tools designed for deaf learners.</p>
-                
-                <div class="features">
-                    <div class="feature">
-                        <i class="fas fa-cube"></i>
-                        <span>3D Anatomy Models</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-brain"></i>
-                        <span>Medical Animations</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-gamepad"></i>
-                        <span>Interactive Learning</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Progress Tracking</span>
-                    </div>
-                </div>
-                
                 <div class="service-actions">
-                    <button onclick="exploreVisualLearning()" class="action-btn">
-                        <i class="fas fa-graduation-cap"></i> Explore Tools
+                    <button onclick="startSignCamera()" class="action-btn">
+                        <i class="fas fa-camera"></i> Start Detection
                     </button>
-                    <button onclick="tryVisualDemo()" class="action-btn secondary">
-                        <i class="fas fa-play-circle"></i> Try Demo
+                    <button onclick="stopSignCamera()" class="action-btn secondary">
+                        <i class="fas fa-stop"></i> Stop
                     </button>
                 </div>
             </div>
+        </div>
         `
     },
-    
+
+    'Signed Consultations': {
+        icon: 'bi-chat-dots',
+        title: 'Signed Consultations',
+        description: 'Upload a sign language video and receive medical interpretation',
+        content: `
+        <div class="service-detail-content">
+            <h3><i class="bi bi-chat-dots"></i> Signed Consultations</h3>
+
+            <input type="file" id="signVideoUpload" accept="video/*">
+            <p id="uploadStatus">No video uploaded</p>
+
+            <button onclick="uploadSignVideo()" class="action-btn">
+                <i class="fas fa-upload"></i> Upload & Analyze
+            </button>
+
+            <div class="result-section">
+                <h4>Interpreted Result</h4>
+                <p id="interpretedText"></p>
+                <video id="responseVideo" controls style="display:none;"></video>
+            </div>
+        </div>
+        `
+    },
+
     'Inclusive Therapy': {
         icon: 'bi-person-check',
         title: 'Inclusive Therapy',
-        description: 'Therapeutic services designed for the deaf community',
+        description: 'Therapy services for deaf community',
         content: `
-            <div class="service-detail-content">
-                <h3><i class="bi bi-person-check"></i> Inclusive Therapy</h3>
-                <p>Mental health services provided by therapists fluent in sign language and familiar with deaf culture.</p>
-                
-                <div class="features">
-                    <div class="feature">
-                        <i class="fas fa-hands-helping"></i>
-                        <span>Deaf-Aware Therapists</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-users"></i>
-                        <span>Group Therapy Sessions</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-home"></i>
-                        <span>Family Counseling</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-heart"></i>
-                        <span>Trauma-Informed Care</span>
-                    </div>
-                </div>
-                
-                <div class="service-actions">
-                    <button onclick="bookInclusiveTherapy()" class="action-btn">
-                        <i class="fas fa-calendar-alt"></i> Book Session
-                    </button>
-                    <button onclick="viewTherapists()" class="action-btn secondary">
-                        <i class="fas fa-user-nurse"></i> View Therapists
-                    </button>
-                </div>
+        <div class="service-detail-content">
+            <h3><i class="bi bi-person-check"></i> Inclusive Therapy</h3>
+
+            <div class="team-info">
+                <h3>Dr. Reham Ghanem</h3>
+                <p class="role">Psychological & Speech Rehabilitation</p>
+                <p class="location">
+                    Villa 73, Safwa Al-Alamein 2, 6 October
+                </p>
+
+                <a href="https://wa.me/201118634848" target="_blank" class="cta-button">
+                    <span class="btn-text">Book Now</span>
+                    <span class="btn-box left"></span>
+                    <span class="btn-box right"></span>
+                </a>
             </div>
-        `
-    },
-    
-    'Subtitled Content': {
-        icon: 'bi-chat-square-text',
-        title: 'Subtitled Content',
-        description: 'Comprehensive subtitling and captioning services',
-        content: `
-            <div class="service-detail-content">
-                <h3><i class="bi bi-chat-square-text"></i> Subtitled Content</h3>
-                <p>Professional subtitling services for all medical content, ensuring accessibility for all.</p>
-                
-                <div class="features">
-                    <div class="feature">
-                        <i class="fas fa-closed-captioning"></i>
-                        <span>Real-time Captioning</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-language"></i>
-                        <span>Multiple Languages</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>ADA Compliant</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <span>Fast Turnaround</span>
-                    </div>
-                </div>
-                
-                <div class="service-actions">
-                    <button onclick="requestSubtitles()" class="action-btn">
-                        <i class="fas fa-upload"></i> Request Subtitles
-                    </button>
-                    <button onclick="viewSubtitleSamples()" class="action-btn secondary">
-                        <i class="fas fa-eye"></i> View Samples
-                    </button>
-                </div>
-            </div>
-        `
-    },
-    
-    'Accessible AI Tools': {
-        icon: 'bi-cpu',
-        title: 'Accessible AI Tools',
-        description: 'AI-powered accessibility tools for healthcare',
-        content: `
-            <div class="service-detail-content">
-                <h3><i class="bi bi-cpu"></i> Accessible AI Tools</h3>
-                <p>Advanced AI tools designed to enhance healthcare accessibility for the deaf community.</p>
-                
-                <div class="features">
-                    <div class="feature">
-                        <i class="fas fa-robot"></i>
-                        <span>Sign Language Recognition</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-microphone"></i>
-                        <span>Speech-to-Text AI</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-brain"></i>
-                        <span>Predictive Assistance</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-chart-bar"></i>
-                        <span>Accessibility Analytics</span>
-                    </div>
-                </div>
-                
-                <div class="service-actions">
-                    <button onclick="tryAIToolsDemo()" class="action-btn">
-                        <i class="fas fa-play"></i> Try AI Demo
-                    </button>
-                    <button onclick="requestCustomAITools()" class="action-btn secondary">
-                        <i class="fas fa-tools"></i> Request Tools
-                    </button>
-                </div>
-            </div>
+        </div>
         `
     }
 };
 
-// Sign Language Service Functions
+// ==================== MODAL FUNCTIONS ====================
 function showSignLanguageDetail(serviceName) {
     const service = signLanguageServices[serviceName];
     if (!service) return;
-    
-    // إغلاق أي modal مفتوح حالياً
-    document.querySelectorAll('.modal, .service-detail-modal').forEach(modal => {
-        modal.style.display = 'none';
-    });
-    
-    // إنشاء modal خاص بـ Sign Language إذا لم يكن موجوداً
+
     let modal = document.getElementById('signLanguageModal');
     if (!modal) {
         modal = document.createElement('div');
         modal.id = 'signLanguageModal';
-        modal.className = 'sign-language-modal service-detail-modal';
+        modal.className = 'sign-language-modal';
         modal.innerHTML = `
             <div class="modal-content">
-                <div class="modal-header">
-                    <button class="close-modal" onclick="closeSignLanguageDetail()">&times;</button>
-                </div>
-                <div class="modal-body" id="signLanguageContent"></div>
+                <button class="close-modal" onclick="closeSignLanguageDetail()">×</button>
+                <div id="signLanguageContent"></div>
             </div>
         `;
         document.body.appendChild(modal);
     }
-    
-    // تعبئة المحتوى
-    const contentDiv = document.getElementById('signLanguageContent');
-    contentDiv.innerHTML = service.content;
-    
-    // إظهار الـ modal
+
+    document.getElementById('signLanguageContent').innerHTML = service.content;
     modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
 }
 
 function closeSignLanguageDetail() {
-    const modal = document.getElementById('signLanguageModal');
-    if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
+    document.getElementById('signLanguageModal').style.display = 'none';
 }
 
-// Action Functions for Sign Language Services
-function playSignLanguageVideo() {
-    alert('Playing sign language video sample. In a real application, this would launch a video player.');
-}
+// ==================== SIGN VIDEO CAMERA ====================
+let signStream, signInterval;
 
-function requestCustomSignVideo() {
-    alert('Custom video request form would open here.');
-}
+function startSignCamera() {
+    const video = document.getElementById('signCamera');
+    const output = document.getElementById('signOutput');
 
-function scheduleSignConsultation() {
-    alert('Sign language consultation scheduling would open here.');
-}
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            signStream = stream;
+            video.srcObject = stream;
 
-function viewInterpreters() {
-    alert('Interpreter directory would open here.');
-}
+            const signs = [
+                'I need help',
+                'I feel pain',
+                'Emergency',
+                'Need a doctor',
+                'Thank you'
+            ];
 
-function exploreVisualLearning() {
-    alert('Visual learning tools page would open here.');
-}
-
-function tryVisualDemo() {
-    alert('Visual learning demo would launch here.');
-}
-
-function bookInclusiveTherapy() {
-    alert('Inclusive therapy booking would open here.');
-}
-
-function requestSubtitles() {
-    alert('Subtitle request form would open here.');
-}
-
-function viewSubtitleSamples() {
-    alert('Subtitle samples would display here.');
-}
-
-function tryAIToolsDemo() {
-    alert('AI tools demo would launch here.');
-}
-
-function requestCustomAITools() {
-    alert('AI tools request form would open here.');
-}
-
-// Initialize Sign Language Page
-function initSignLanguagePage() {
-    console.log('Sign Language page initialized');
-    
-    // Add CSS for Sign Language modal if not exists
-    if (!document.querySelector('#signLanguageCSS')) {
-        const css = document.createElement('style');
-        css.id = 'signLanguageCSS';
-        css.textContent = `
-            .sign-language-modal {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0,0,0,0.7);
-                z-index: 10000;
-                animation: fadeIn 0.3s ease;
-            }
-            
-            .sign-language-modal .modal-content {
-                background: white;
-                width: 90%;
-                max-width: 800px;
-                max-height: 80vh;
-                margin: 10vh auto;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            }
-            
-            .sign-language-modal .modal-header {
-                background: #5a4241;
-                color: white;
-                padding: 20px;
-                display: flex;
-                justify-content: flex-end;
-            }
-            
-            .sign-language-modal .close-modal {
-                background: none;
-                border: none;
-                color: white;
-                font-size: 28px;
-                cursor: pointer;
-                padding: 0;
-                width: 40px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                transition: background-color 0.3s;
-            }
-            
-            .sign-language-modal .close-modal:hover {
-                background-color: rgba(255,255,255,0.2);
-            }
-            
-            .sign-language-modal .modal-body {
-                padding: 30px;
-                overflow-y: auto;
-                max-height: calc(80vh - 80px);
-            }
-            
-            .service-detail-content h3 {
-                color: #5a4241;
-                margin-top: 0;
-                font-size: 28px;
-                display: flex;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .service-detail-content .features {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-                margin: 30px 0;
-            }
-            
-            .service-detail-content .feature {
-                background: #f9f7f5;
-                padding: 20px;
-                border-radius: 8px;
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                border-left: 4px solid #8c7473;
-            }
-            
-            .service-detail-content .feature i {
-                font-size: 24px;
-                color: #8c7473;
-                width: 40px;
-                text-align: center;
-            }
-            
-            .service-detail-content .feature span {
-                font-weight: 600;
-                color: #5a4241;
-            }
-            
-            .service-actions {
-                display: flex;
-                gap: 15px;
-                margin-top: 30px;
-                flex-wrap: wrap;
-            }
-            
-            .action-btn {
-                background: #5a4241;
-                color: white;
-                border: none;
-                padding: 12px 24px;
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 16px;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                transition: background-color 0.3s;
-            }
-            
-            .action-btn:hover {
-                background: #8c7473;
-            }
-            
-            .action-btn.secondary {
-                background: transparent;
-                color: #5a4241;
-                border: 2px solid #5a4241;
-            }
-            
-            .action-btn.secondary:hover {
-                background: #5a4241;
-                color: white;
-            }
-            
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-        `;
-        document.head.appendChild(css);
-    }
-    
-    // Add event listeners to service cards
-    document.querySelectorAll('.service-card').forEach(card => {
-        card.addEventListener('click', function() {
-            const serviceName = this.textContent.trim();
-            showSignLanguageDetail(serviceName);
+            signInterval = setInterval(() => {
+                output.textContent = signs[Math.floor(Math.random() * signs.length)];
+            }, 2500);
         });
-    });
 }
 
-// Close modal when clicking outside
-document.addEventListener('click', function(event) {
-    const modal = document.getElementById('signLanguageModal');
-    if (modal && event.target === modal) {
-        closeSignLanguageDetail();
+function stopSignCamera() {
+    if (signStream) {
+        signStream.getTracks().forEach(track => track.stop());
     }
-});
+    clearInterval(signInterval);
+    document.getElementById('signOutput').textContent = 'Camera stopped';
+}
 
-// Close modal with Escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        closeSignLanguageDetail();
-    }
-});
+// ==================== SIGN CONSULTATION ====================
+function uploadSignVideo() {
+    const status = document.getElementById('uploadStatus');
+    const text = document.getElementById('interpretedText');
+    const video = document.getElementById('responseVideo');
+
+    status.textContent = 'Analyzing video...';
+
+    setTimeout(() => {
+        status.textContent = 'Analysis complete';
+        text.textContent =
+            'The signs indicate anxiety and emotional stress. Recommended therapy session.';
+
+        video.src = 'sample-response.mp4'; // فيديو demo
+        video.style.display = 'block';
+    }, 3000);
+}
